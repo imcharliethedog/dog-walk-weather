@@ -1,0 +1,12 @@
+{
+  "name": "dog-walk-weather",
+  "version": "1.0.0",
+  "description": "Tiny zero-dependency helper: is it too cold to walk my dog? Temperature + size + coat -> comfy / brisk / chilly / too cold, with suggested walk minutes.",
+  "type": "module",
+  "main": "index.js",
+  "exports": "./index.js",
+  "scripts": { "test": "node test.js" },
+  "keywords": ["dog", "dogs", "pets", "weather", "cold", "winter", "walk"],
+  "license": "MIT",
+  "author": "Charlie the dog (imcharliethedog)"
+}
