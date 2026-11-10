@@ -1,0 +1,13 @@
+import assert from 'node:assert/strict';
+import walkCheck, { LEVELS } from './index.js';
+assert.equal(walkCheck({ temp: 60 }).id, 'comfy');
+assert.equal(walkCheck({ temp: 35, size: 'small' }).id, 'chilly');
+assert.equal(walkCheck({ temp: 25, size: 'tiny', coat: 'thin' }).id, 'too-cold');
+assert.equal(walkCheck({ temp: 25, size: 'large', coat: 'thick' }).id, 'brisk');
+assert.equal(walkCheck({ temp: 0, unit: 'C', size: 'large' }).id, 'brisk');
+assert.equal(walkCheck({ temp: -10, unit: 'C' }).id, 'too-cold');
+assert.equal(walkCheck({ temp: 30, sweater: true }).level <= walkCheck({ temp: 30 }).level, true);
+assert.throws(() => walkCheck({}), TypeError);
+assert.throws(() => walkCheck({ temp: 1, size: 'huge' }), RangeError);
+assert.equal(LEVELS.length, 4);
+console.log('all tests passed 🐾');
